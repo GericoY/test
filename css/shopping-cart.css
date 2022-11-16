@@ -1,0 +1,9 @@
+.picture2 {
+    display: none;
+}
+.thumbnail:hover .picture1 {
+    display: none;
+}
+.thumbnail:hover .picture2 {
+    display: block;
+}
