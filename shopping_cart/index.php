@@ -3,58 +3,58 @@
         [
             'name' => "Brown Shirt",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "550";
-            'photo1' => "product1A.jpg",
-            'photo2' => "product1B.jpg"
+            'price' => "550",
+            'photo1' => "img/produc1A.jpg",
+            'photo2' => "img/produc1B.jpg"
         ],
         [
             'name' => "Gray Shirt",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "550";
-            'photo1' => "product2A.jpg",
-            'photo2' => "product2B.jpg"
+            'price' => "550",
+            'photo1' => "img/produc2A.jpg",
+            'photo2' => "img/produc2B.jpg"
         ],
         [
             'name' => "White Blazer",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "750";
-            'photo1' => "product3A.jpg",
-            'photo2' => "product3B.jpg"
+            'price' => "750",
+            'photo1' => "img/produc3A.jpg",
+            'photo2' => "img/produc3B.jpg"
         ],
         [
             'name' => "Dark Blue Polo Shirt",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "600";
-            'photo1' => "product4A.jpg",
-            'photo2' => "product4B.jpg"
+            'price' => "600",
+            'photo1' => "img/produc4A.jpg",
+            'photo2' => "img/produc4B.jpg"
         ],
         [
             'name' => "Dark Blue Long Sleeves",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "800";
-            'photo1' => "product5A.jpg",
-            'photo2' => "product5B.jpg"
+            'price' => "800",
+            'photo1' => "img/produc5A.jpg",
+            'photo2' => "img/produc5B.jpg"
         ],
         [
             'name' => "White Long Sleeves",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "800";
-            'photo1' => "product6A.jpg",
-            'photo2' => "product6B.jpg" 
+            'price' => "800",
+            'photo1' => "img/produc6A.jpg",
+            'photo2' => "img/produc6B.jpg" 
         ],
         [
             'name' => "Dark Blue Blazer",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "750";
-            'photo1' => "product7A.jpg",
-            'photo2' => "product7B.jpg"
+            'price' => "750",
+            'photo1' => "img/produc7A.jpg",
+            'photo2' => "img/produc7B.jpg"
         ],
         [
             'name' => "Floral Polo",
             'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque architecto et distinctio quasi reprehenderit, culpa nemo ipsum, similique asperiores officia cum. Numquam ab explicabo tempora quam assumenda. Aliquam, adipisci incidunt.",
-            'price' => "650";
-            'photo1' => "product8A.jpg",
-            'photo2' => "product8B.jpg"
+            'price' => "650",
+            'photo1' => "img/produc8A.jpg",
+            'photo2' => "img/produc8B.jpg"
         ],
     ]
 
@@ -70,20 +70,39 @@
     <link rel="stylesheet" href="../css/shopping-cart.css">
     <title>Home</title>
 </head>
-<body>
-    <div class="container mt-3">
-        <div class="col">
-            <div class="row">
-                <h2><i class="fa-solid fa-store"></i> Learn IT Easy Online Shop </h2>
-                <div class="d-block">
-                    <a class="btn btn-primary" href="#" role="button"><i class="fa-solid fa-cart-shopping"></i> Cart <span class="badge badge-light">0</span></a>
-                </div>
+<body>   
+    <div class="container">
+        <div class="row">
+            <h3 class="h3"><i class="fa-solid fa-store"></i> Learn IT Easy Online Shop</h3>
+            <div class="d-block text-right">
+                <a class="btn btn-primary" href="#" role="button"><i class="fa-solid fa-cart-shopping"></i> Cart </a>
             </div>
         </div>
-        <hr>
+        <hr> 
+    <?php
+        if(isset($arrProducts)){
+            foreach($arrProducts as $test1a => $test1b){
+                echo '<div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="product-grid2">
+                                <div class="product-image2">
+                                    <a href="#">
+                                        <img class="pic-1" src="' . $arrProducts[$test1a]['photo1'] . '">
+                                        <img class="pic-2" src="' . $arrProducts[$test1a]['photo2'] . '">
+                                    </a>
+                                    <a class="add-to-cart" href="">Add to cart</a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="#">' . $arrProducts[$test1a]['name'] . ' </a><span class="badge badge-secondary">₱ ' . $arrProducts[$test1a]['price'] . '</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        }
+    ?>
     </div>
-    
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
