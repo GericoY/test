@@ -74,7 +74,7 @@
     <div class="container">
         <div class="row">
             <h3 class="h3"><i class="fa-solid fa-store"></i> Learn IT Easy Online Shop</h3>
-            <div class="d-block text-right">
+            <div class="d-block">
                 <a class="btn btn-primary" href="#" role="button"><i class="fa-solid fa-cart-shopping"></i> Cart </a>
             </div>
         </div>
@@ -83,22 +83,20 @@
     <?php
         if(isset($arrProducts)){
             foreach($arrProducts as $test1a => $test1b){
-                echo '
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product-grid2">
-                                <div class="product-image2">
-                                    <a href="#">
-                                        <img class="pic-1" src="' . $arrProducts[$test1a]['photo1'] . '">
-                                        <img class="pic-2" src="' . $arrProducts[$test1a]['photo2'] . '">
-                                    </a>
-                                    <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="#">' . $arrProducts[$test1a]['name'] . ' </a><span class="badge badge-secondary">₱ ' . $arrProducts[$test1a]['price'] . '</span></h3>
-                                </div>
-                            </div>
+                echo '<div class="col-md-3 col-sm-6">
+                    <div class="product-grid2">
+                        <div class="product-image2">
+                            <a href="#">
+                                <img class="pic-1" src="' . $arrProducts[$test1a]['photo1'] . '">
+                                <img class="pic-2" src="' . $arrProducts[$test1a]['photo2'] . '">
+                            </a>
+                            <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
                         </div>
-                    ';
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">' . $arrProducts[$test1a]['name'] . ' </a><span class="badge badge-secondary">₱ ' . $arrProducts[$test1a]['price'] . '</span></h3>
+                        </div>
+                    </div>
+                </div>';
             }
         }
     ?>
