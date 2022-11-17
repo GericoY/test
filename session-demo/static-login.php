@@ -55,10 +55,10 @@
                 foreach($users as $user) {                
                     if($user['user_type'] == $_POST['user_type'] && $user['user_name'] == $_POST['user_name'] && $user['password'] == $_POST['password']) {
                         $valid_user = true;
-                        $_SESSION['nameuser'] = $value['user_name'];
+                        $_SESSION['username'] = $user['user_name'];
                         header("location: home.php");
                         break;
-                        }
+                    }
                 }
 
                 if($valid_user == true) {

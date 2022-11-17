@@ -1,10 +1,4 @@
-<?php 
-    session_start();
-
-    if(!isset($_SESSION['nameuser'])){
-        header("location: static-login.php");
-    }
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +12,8 @@
     <a href="profile.php">Profile</a>
     <a href="logout.php">Log Out</a>
     <hr>
+
     <h1>Home</h1>
-    <p>Welcome, <?php echo $_SESSION['nameuser']; ?></p>
+    <p>Welcome, <?php echo $_SESSION['username']; ?></p>
 </body>
 </html>
