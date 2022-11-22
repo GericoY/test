@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('arrHolder.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,60 +15,53 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <h3 class="h3"><i class="fa-solid fa-store"></i> Learn IT Easy Online Shop</h3>
-            <div class="d-block">
-                <a class="btn btn-primary" href="#" role="button"><i class="fa-solid fa-cart-shopping"></i> Cart </a>
+        <div class="row mt-3">
+            <div class="col-10">
+                <h2><i class="fa fa-store"></i> Learn IT Easy Online Shop</h2>
             </div>
+            <div class="col-2 text-right">
+                <a href="cart.php" class="btn btn-primary">
+                    <i class="fa fa-shopping-cart"></i> Cart <span class="badge badge-light">0</span>
+                </a>
+            </div>            
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <?php
+            echo '<div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
-                        <a href="#">
-                        <?php 
-                            for ($i=0; $i < 9; $i++) { 
-                                if($_SESSION['ID'] = $i){
-                                    echo '';
-                                    break;
-                                }
-                                else{
-                                    continue;
-                                }
-                            }
-                                
-                        ?>
-                            <img class="pic-1" src="img/produc1A.jpg">
-                            <img class="pic-2" src="img/produc1B.jpg">
-                        </a>
+                        <img class="pic-1" src="'. $arrProducts[$_GET['id']]['photo1'] .'">
+                        <img class="pic-2" src="'. $arrProducts[$_GET['id']]['photo2'] .'">
                     </div>
                 </div>
-            </div>
+            </div>'
+            ?>
             <div class="col-md-9 col-sm-6">
-                Name
-                <br>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam magnam odio fuga eius. Minus numquam nostrum voluptatem nesciunt eius quo enim consequatur pariatur possimus? Perspiciatis dolores sed eligendi pariatur deleniti!
+                <h4 class="d-block">
+                    <?php echo $arrProducts[$_GET['id']]['name']; ?>
+                    <span class="badge badge-secondary">₱ <?php echo $arrProducts[$_GET['id']]['price']?></span>
+                </h4>
+                <p><?php echo $arrProducts[$_GET['id']]['description']; ?></p>
                 <hr>
                 <h4>Select Size: </h4>
-                <input type="radio" name="size" id="size-xs">
-                <label for="size-xs">XS</label>
+                <input type="radio" name="size" id="size-xs" checked>
+                <label for="size-xs" class="pr-3">XS</label>
                 <input type="radio" name="size" id="size-sm">
-                <label for="size-sm">SM</label>
+                <label for="size-sm" class="pr-3">SM</label>
                 <input type="radio" name="size" id="size-md">
-                <label for="size-md">MD</label>
+                <label for="size-md" class="pr-3">MD</label>
                 <input type="radio" name="size" id="size-lg">
-                <label for="size-lg">LG</label>
+                <label for="size-lg" class="pr-3">LG</label>
                 <input type="radio" name="size" id="size-xl">
-                <label for="size-xl">XL</label>
+                <label for="size-xl" class="pr-3">XL</label>
                 <hr>
                 <h3>Enter Quantity</h3>
-                <input type="number" name="qty" id="qty" style="width: 370px;" min="0" max="100" value="0">
+                <input type="number" name="qty" id="qty" style="width: 370px;" min="1" max="100" value="0" required>
                 <div class="d-block mt-3">
-                    <button type="button" class="btn btn-dark"><i class="fa-solid fa-circle-check"></i> Confirm Product Purchase</button>
-                    <button type="button" class="btn btn-danger">Cancel/Go Back</button>
+                    <button type="submit" name="process" class="btn btn-dark"><i class="fa fa-check-circle"></i> Confirm Product Purchase</button>
+                    <a href="index.php" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Cancel / Go Back</a>
                 </div>
-                
             </div>
         </div>
     </div>
