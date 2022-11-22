@@ -13,13 +13,18 @@
     <title>Cart</title>
 </head>
 <body>
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-10">
+                <h2><i class="fa fa-store"></i> Learn IT Easy Online Shop</h2>
+            </div>
+            <div class="col-2 text-right">
+                <a href="cart.php" class="btn btn-primary">
+                    <i class="fa fa-shopping-cart"></i> Cart <span class="badge badge-light">0</span>
+                </a>
+            </div>            
         </div>
-    </section>
-
-    <div class="container mb-4">
+        <hr>
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
@@ -28,9 +33,10 @@
                             <tr>
                                 <th scope="col"> </th>
                                 <th scope="col">Product</th>
-                                <th scope="col">Available</th>
-                                <th scope="col" class="text-center">Quantity</th>
-                                <th scope="col" class="text-right">Price</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total</th>
                                 <th> </th>
                             </tr>
                         </thead>
@@ -38,50 +44,11 @@
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                 <td>Product Name Dada</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">124,90 €</td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>Product Name Toto</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">33,90 €</td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>Product Name Titi</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">70,00 €</td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>Sub-Total</td>
-                                <td class="text-right">255,90 €</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>Shipping</td>
-                                <td class="text-right">6,90 €</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>346,90 €</strong></td>
+                                <td>Size Here</td>
+                                <td><input type="number" class="form-control text-center" min="1" max="100" required style="width: 150px;"></td>
+                                <td>₱ Price Here</td>
+                                <td>Total Here</td>
+                                <td><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                             </tr>
                         </tbody>
                     </table>
@@ -89,11 +56,14 @@
             </div>
             <div class="col mb-2">
                 <div class="row">
-                    <div class="col-sm-12  col-md-6">
-                        <button class="btn btn-block btn-light">Continue Shopping</button>
+                    <div class="col-sm-12  col-md-4">
+                        <button class="btn btn-block btn-danger"><i class="fa fa-shopping-bag"></i> Continue Shopping</button>
                     </div>
-                    <div class="col-sm-12 col-md-6 text-right">
-                        <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    <div class="col-sm-12  col-md-4">
+                        <button class="btn btn-block btn-success"><i class="fa fa-edit"></i> Update Cart</button>
+                    </div>
+                    <div class="col-sm-12 col-md-4 text-right">
+                        <button class="btn btn-block btn-primary"><i class="fa fa-sign-out-alt"></i> Checkout</button>
                     </div>
                 </div>
             </div>
