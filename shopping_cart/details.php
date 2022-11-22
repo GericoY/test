@@ -28,14 +28,16 @@
         <hr>
         <div class="row">
             <?php
-            echo '<div class="col-md-3 col-sm-6">
+            if(isset($_GET['id']) && isset($arrProducts[$_GET['id']])){
+                echo '<div class="col-md-3 col-sm-6">
                 <div class="product-grid2">
                     <div class="product-image2">
                         <img class="pic-1" src="'. $arrProducts[$_GET['id']]['photo1'] .'">
                         <img class="pic-2" src="'. $arrProducts[$_GET['id']]['photo2'] .'">
                     </div>
                 </div>
-            </div>'
+            </div>';
+            }
             ?>
             <div class="col-md-9 col-sm-6">
                 <h4 class="d-block">
