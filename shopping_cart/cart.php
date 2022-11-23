@@ -77,7 +77,7 @@
                                                 </td>
                                                 <td class="text-center">₱ <?php echo number_format($_SESSION['productArr'][$key]['price'], 2); ?></td>
                                                 <td class="text-center">₱ <?php echo number_format($_SESSION['productArr'][$key]['price'] * $quantity, 2); ?></td>
-                                                <td class="text-center"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                                <td class="text-center"><a href="remove-confirm.php?<?php echo 'key=' . $key . '&size=' . $size . '&quantity=' . $quantity; ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     <?php endforeach; ?>
